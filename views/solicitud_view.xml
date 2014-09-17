@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+	<data>
+		<!-- estaes la vista del form de multimedia -->
+		<record id="view_solicitud_form" model="ir.ui.view">
+			<field name="name">co.solicitud.form</field>
+			<field name="model">co.solicitud</field>
+			<field name="arch" type="xml">
+				<form string="Solicitud" version="7.0">
+					<sheet>
+						<div class="oe_title">
+							<label for="codigo" required="1"/>
+							<field name="codigo"/>
+							<label for="suscriptor_id" required="1"/>
+							<field name="suscriptor_id" />
+							<label for="multimedia_id" required="1"/>
+							<field name="multimedia_id" />
+							<label for="medio_id" required="1"/>
+							<field name="medio_id"/>
+							<label for="tienda_id"/>
+							<field name="tienda_id"/>
+							<label for="fecha_solicitud"/>
+							<field name="fecha_solicitud"/>
+							<label for="duracion_dia"/>
+							<field name="duracion_dia"/>
+						</div>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<!-- vista tree de multimedia -->
+		<record id="view_solicitud_tree" model="ir.ui.view">
+			<field name="name">co.solicitud.tree</field>
+			<field name="model">co.solicitud</field>
+			<field name="arch" type="xml">
+				<tree string="Solicitud" >
+					<field name="codigo"/>
+					<field name="suscriptor_id" />
+					<field name="multimedia_id" />
+					<field name="medio_id"/>
+					<field name="tienda_id"/>
+					<field name="fecha_solicitud"/>
+					<field name="duracion_dia"/>
+				</tree>
+			</field>
+		</record>
+
+		<!-- vista de action-->
+
+		<record id="action_solicitud" model="ir.actions.act_window">
+			<field name="name">Solicitud</field>
+			<field name="res_model">co.solicitud</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form,tree</field>
+			<field name="view_id" ref="view_solicitud_tree"/>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Aquí se registran las solicitudes de los clientes.
+				</p>
+			</field>
+		</record>
+
+		<menuitem action="action_solicitud" id="menu_solicitud" sequence="5" parent="submenu_solicitud" />
+	</data>
+</openerp>

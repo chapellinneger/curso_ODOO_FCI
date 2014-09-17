@@ -7,9 +7,10 @@ class categoria(osv.osv):
 	"""docstring for categoria"""
 	_name = 'co.categoria'
 	_description = 'CO Categoria'
+	_rec_name = 'nombre'
 
 	_columns = {
-		'nombre': fields.char('Nombre'),
+		'nombre': fields.char('Nombre', required="true"),
 		'descripcion': fields.text('Descripción'),
 		'parent_id' :fields.many2one('co.categoria','Padre'),
 		'child_ids': fields.one2many(

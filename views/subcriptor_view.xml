@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+	<data>
+		<!-- estaes la vista del form de multimedia -->
+		<record id="view_subcriptor_form" model="ir.ui.view">
+			<field name="name">co.subcriptor.form</field>
+			<field name="model">co.subcriptor</field>
+			<field name="arch" type="xml">
+				<form string="Suscriptor" version="7.0">
+					<sheet>
+						<div class="oe_title">
+							<label for="nombre_subcritor" class="oe_edit_only" required="1"/>
+							<field name="nombre_subcritor"/>
+							<label for="cedula" class="oe_edit_only"/>
+							<field name="cedula"/>
+							<label for="direccion" class="oe_edit_only"/>
+							<field name="direccion"/>
+						</div>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<!-- vista tree de multimedia -->
+		<record id="view_subcriptor_tree" model="ir.ui.view">
+			<field name="name">co.subcriptor.tree</field>
+			<field name="model">co.subcriptor</field>
+			<field name="arch" type="xml">
+				<tree string="Suscriptor" >
+					<field name="nombre_subcritor"/>
+					<field name="cedula" required="1" />
+					<field name="direccion" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- vista de action-->
+
+		<record id="action_subcriptor" model="ir.actions.act_window">
+			<field name="name">Suscriptor</field>
+			<field name="res_model">co.subcriptor</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form,tree</field>
+			<field name="view_id" ref="view_subcriptor_tree"/>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Aquí se registran las Personas que quieran suscribirse a las tiendas "Jorge Movie".
+				</p>
+			</field>
+		</record>
+
+		<menuitem action="action_subcriptor" id="menu_subcriptor" sequence="5" parent="submenu_subcriptor" />
+	</data>
+</openerp>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+	<data>
+		<!-- estaes la vista del form de multimedia -->
+		<record id="view_tienda_form" model="ir.ui.view">
+			<field name="name">co.tienda.form</field>
+			<field name="model">co.tienda</field>
+			<field name="arch" type="xml">
+				<form string="Tienda" version="7.0">
+					<sheet>
+						<div class="oe_title">
+							<label for="nombre" class="oe_edit_only"/>
+							<field name="nombre"/>
+						</div>
+						<notebook>
+							<page string="Detalles">
+								<group>
+									<field name="direccion" required="1" />
+								</group>
+							</page>
+							<page string="Stock">
+								<group>
+									<field name="liena_id" nolabel="1">
+										<tree editable="botton" delete="false" >
+											<field name="multimedia_id" />
+											<field name="mendio_id" />
+											<field name="tienda_id" invisible="1"/>
+											<field name="cantidad" />
+										</tree>
+									</field>
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<!-- vista tree de multimedia -->
+		<record id="view_tienda_tree" model="ir.ui.view">
+			<field name="name">co.tienda.tree</field>
+			<field name="model">co.tienda</field>
+			<field name="arch" type="xml">
+				<tree string="Tienda" >
+					<field name="nombre" />
+					<field name="direccion" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- vista de action-->
+
+		<record id="action_tienda" model="ir.actions.act_window">
+			<field name="name">Tienda</field>
+			<field name="res_model">co.tienda</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form,tree</field>
+			<field name="view_id" ref="view_tienda_tree"/>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Aquí se registran las Tiendas de alquiler de peliculas "Jorge Movie".
+				</p>
+			</field>
+		</record>
+
+		<menuitem action="action_tienda" id="menu_tienda" sequence="5" parent="submenu_tienda" />
+	</data>
+</openerp>

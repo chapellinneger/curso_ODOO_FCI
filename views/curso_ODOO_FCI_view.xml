@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+	<data>
+		<!-- Mennu Padre -->
+		<menuitem id="menu_base_curso" name="Inicio" sequence="5"  groups="base.group_user" />
+		<!-- sub-menu multimedia -->
+		<menuitem id="submenu_multimedia" name="Multimedia" parent="menu_base_curso" sequence="5" groups="base.group_user" />
+		<menuitem id="submenu_medio" name="Medios" parent="menu_base_curso" sequence="10" groups="base.group_user" />
+		<menuitem id="submenu_categoria" name="Categorias" parent="menu_base_curso" sequence="15" groups="base.group_user" />
+		<menuitem id="submenu_tienda" name="Sucursales" parent="menu_base_curso" sequence="20" groups="base.group_user" />
+		<menuitem id="submenu_subcriptor" name="Suscriptor" parent="menu_base_curso" sequence="25" groups="base.group_user" />
+		<menuitem id="submenu_suscripcion" name="Suscripcion" parent="menu_base_curso" sequence="30" groups="base.group_user" />
+		<menuitem id="submenu_solicitud" name="Solicitud" parent="menu_base_curso" sequence="35" groups="base.group_user" />
+	</data>
+</openerp>

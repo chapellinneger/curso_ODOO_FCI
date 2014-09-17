@@ -7,9 +7,11 @@ class multimedia(osv.osv):
 	"""docstring for multimedia"""
 	_name = 'co.multimedia'
 	_description = 'CO Multimedia'
+	_rec_name = 'titulo'
+	_order = 'fecha_publicacion desc'
 
 	_columns = {
-		'titulo': fields.char('Título'),
+		'titulo': fields.char('Título', required="true"),
 		'fecha_publicacion': fields.date('Fecha de publicación'),
 		'codigo': fields.char('Código'),
 		'categoria_id': fields.many2one('co.categoria', 'Categoria'),
