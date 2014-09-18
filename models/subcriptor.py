@@ -14,4 +14,9 @@ class subcriptor(osv.osv):
 		'direccion': fields.text('Dirección del Suscriptor', required="true")
 	}
 
+	_sql_constraints = [
+		('cedula_unique','unique(cedula)',
+			u'El Número de cédula ya existe!!!'),
+	]
+
 subcriptor()

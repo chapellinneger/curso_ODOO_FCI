@@ -10,6 +10,20 @@ class multimedia(osv.osv):
 	_rec_name = 'titulo'
 	_order = 'fecha_publicacion desc'
 
+	def _compute_stock(self, cr, uid, ids, fields_name, arg, context):
+		stock_obj = self.pool.get('co.linea.stock')
+		if isinstance(ids, (int,long)):
+			ids = [ids]
+		res = {}
+		for i in ids:
+			lineas_ids = stock_obj.search(cr,uid,[
+				('multimedia_id','=', i),])
+			lineas_brw = stock_obj.browse(cr,uid,lineas_ids)
+			res[i] = sum([l.cantidad for l in lineas_brw])
+
+		return res
+
+
 	_columns = {
 		'titulo': fields.char('Título', required="true"),
 		'fecha_publicacion': fields.date('Fecha de publicación'),
@@ -20,6 +34,7 @@ class multimedia(osv.osv):
 			'co_multimedia_medio_rel',
 			'multimedia_id',
 			'medio_id'),
+		'stock':fields.function(_compute_stock,type='integer')
 	}
 
 

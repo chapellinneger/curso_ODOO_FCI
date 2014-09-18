@@ -9,8 +9,8 @@
 				<form string="Suscripcion" version="7.0">
 					<sheet>
 						<div class="oe_title">
-							<label for="codigo" class="oe_edit_only"/>
-							<field name="codigo" readonly="1"/>
+							<label for="codigo" class="oe_edit_only" string="Código se genera Automaticamente" />
+							<field name="codigo" readonly="1" />
 						</div>
 						<notebook>
 								<page string="Detalles">
@@ -34,8 +34,8 @@
 		<record id="view_suscripcion_tree" model="ir.ui.view">
 			<field name="name">co.suscripcion.tree</field>
 			<field name="model">co.suscripcion</field>
-			<field name="arch" type="xml">
-				<tree string="Suscripcion" >
+			<field name="arch" type="xml"> 
+				<tree string="Suscripcion" colors="brows:tipo =='bronce'; gray:tipo =='plata'; orange:tipo =='oro'">
 					<field name="codigo"/>
 					<field name="tipo"/>
 					<field name="fecha_inicio"/>

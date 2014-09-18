@@ -20,10 +20,10 @@
 							</page>
 							<page string="Stock">
 								<group>
-									<field name="liena_id" nolabel="1">
+									<field name="tienda_ids" nolabel="1">
 										<tree editable="botton" delete="false" >
-											<field name="multimedia_id" />
-											<field name="mendio_id" />
+											<field name="medio_id"  on_change="onchange_medio_id(medio_id)"/>
+											<field name="multimedia_id" domain="[('medio_ids','=',medio_id)]"/>
 											<field name="tienda_id" invisible="1"/>
 											<field name="cantidad" />
 										</tree>
