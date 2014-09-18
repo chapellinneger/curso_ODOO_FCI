@@ -8,6 +8,7 @@
 	'version': 'Alfa',
 	'depends': ['base', 'mail', ],
 	'data':[
+		'security/curso_ODOO_FCI_security.xml',
 		'views/curso_ODOO_FCI_view.xml',
 		'views/multimedia_view.xml',
 		'views/medio_view.xml',
@@ -16,7 +17,9 @@
 		'views/subcriptor_view.xml',
 		'views/suscripcion_view.xml',
 		'views/solicitud_view.xml',
+		'security/menu_security.xml',
 		'data/suscripcion_data.xml',
+		'security/ir.model.access.csv',
 	],
 	'demo':[],
 }
