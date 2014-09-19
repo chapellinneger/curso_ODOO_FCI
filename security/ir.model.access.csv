@@ -7,3 +7,11 @@ access_categoria_suscritor,access_categoria_suscritor,curso_odoo.model_co_catego
 access_tienda_suscritor,access.tienda.suscritor,curso_odoo.model_co_tienda,group_suscriptor,1,0,0,0
 access_linea_stock_suscritor,access.linea.stock.suscritor,curso_odoo.model_co_linea_stock,group_suscriptor,1,0,0,0
 access_subcriptor_suscritor,access.subcriptor.suscritor,curso_odoo.model_co_subcriptor,group_suscriptor,1,0,0,0
+access_multimedia_admin,access.multimedia.admin,curso_odoo.model_co_multimedia,group_admin,1,1,1,1
+access_suscripcion_admin,access.multimedia.admin,curso_odoo.model_co_suscripcion,group_admin,1,1,1,1
+access_solicitud_admin,access.suscripcion.admin,curso_odoo.model_co_solicitud,group_admin,1,1,1,1
+access_tipo_medio_admin,access.solicitud.admin,curso_odoo.model_co_tipo_medio,group_admin,1,1,1,1
+access_categoria_admin,access.tipo.medio.admin,curso_odoo.model_co_categoria,group_admin,1,1,1,1
+access_tienda_admin,access_categoria.admin,curso_odoo.model_co_tienda,group_admin,1,1,1,1
+access_linea_stock_admin,access.tienda.admin,curso_odoo.model_co_linea_stock,group_admin,1,1,1,1
+access_subcriptor_admin,access.linea.stock.admin,curso_odoo.model_co_subcriptor,group_admin,1,1,1,1
